@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% load bootstrap3 %}
+{% block content %}
+<div class="container">
+  <h1>Sign UP</h1>
+  <form  method="POST">
+    {% bootstrap_form form %}
+    {% csrf_token %}
+    <input type="submit" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false" value="Sign UP">
+  </form>
+</div>
+{% endblock %}

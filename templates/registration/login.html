@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+  <div class="form-group">
+    <h4>Please Login: </h4>
+    {% if form.errors %}
+        <p>Your username and password didn't match.Please try again!</p>
+    {% endif %}
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Login" />
+    </form>
+  </div>
+{% endblock %}

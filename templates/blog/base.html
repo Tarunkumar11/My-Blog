@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>MyBlog</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/jumbotron/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="https://getbootstrap.com/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="https://getbootstrap.com/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="https://getbootstrap.com/docs/4.4/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="https://getbootstrap.com/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="https://getbootstrap.com/docs/4.4/assets/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+
+
+    <style>
+    /*
+    .map{
+      align-items: right;
+      padding-left:400px;
+   }
+
+    .column {
+      width: 33.33%;
+      padding: 100px;
+
+    }
+
+    /* Clear floats after image containers
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    } */
+
+
+
+
+
+
+
+
+
+
+    .jumbotron{
+      padding-top: 10px;
+      padding-bottom: 100px
+    }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href={% static "css/jumbotron.css" %} rel="stylesheet">
+
+  </head>
+
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="{% url 'post_list' %}">MyBlog</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"><a class="nav-link" href="{% url 'post_list' %}">Home <span class="sr-only">(current)</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+
+        <ul class="navbar-nav  navbar-right">
+            {% if user.is_authenticated %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'post_new' %}">New Post</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'post_draft_list' %}">Drafts</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+            <li class="nav-item"><a class="nav-link" style="color: white; ">Welcome:{{user.first_name}} {{user.last_name}} </a></li>
+            {% else %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}">Register </a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}" >Login</a></li>
+            {% endif %}
+        </ul>
+      </div>
+    </nav>
+
+
+
+  <!--<div class="container">
+    <!-- Example row of columns
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-secondary" href="https://getbootstrap.com/docs/4.4/examples/jumbotron/#" role="button">View details »</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-secondary" href="https://getbootstrap.com/docs/4.4/examples/jumbotron/#" role="button">View details »</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Heading</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-secondary" href="https://getbootstrap.com/docs/4.4/examples/jumbotron/#" role="button">View details »</a></p>
+      </div>
+    </div>
+
+    <hr>
+
+  </div> </container -->
+
+
+
+<div class="content container jumbotron">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="bolg_post">
+        {% block content %}
+        {% endblock %}
+        </div>
+      </div>
+  </div>
+</div>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">My Blog</h1>
+      <p>A good writer could be a good conveyor of resourceful information, so that those seeking specific resources find them. A good writer could be someone who abbreviates large amounts of text into one tiny paragraph without losing any content, so that people who are too busy to read get the gist of it. A good writer could be someone who tells a story with emotion—one who connects with the audience on a emotional level. And a good writer can be someone who takes the reader on a journey up the valley of the rising plot, over the hill that is the climax, and finally to the destination that is the denouement. </p>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="#"  style="color:black;">Contact No: 9557144988<a></li>
+          <li><a href="https://www.google.com/intl/en-GB/gmail/about/#"  style="color:black;"> Email: tarunmzn98@gmail.com<a></li>
+          <li><a href="https://www.facebook.com/"  style="color:black;">Facebook:tarrunsaini@gmail.com<a></li>
+        </ul>
+        <p><a class="btn btn-secondary" href="{% url 'contact' %}" role="button">View details »</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Clients</h2>
+        <ul>
+          <li><a href="#"  style="color:black;">Jhon Smith<a></li>
+          <li><a href="#"  style="color:black;">Steve Back<a></li>
+          <li><a href="#"  style="color:black;">Rohit Shah<a></li>
+          <li><a href="#"  style="color:black;">Nick Jhon<a></li>
+        </ul>
+        <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Resources</h2>
+        <ul>
+          <li><a href="#"  style="color:black;">Best way to write a blog<a></li>
+          <li><a href="#"  style="color:black;">How to Think<a></li>
+          <li><a href="#"  style="color:black;">What should I write<a></li>
+          <li><a href="#"  style="color:black;">How to start a Blog<a></li>
+          <li><a href="#"  style="color:black;">How to make money blogging<a></li>
+        </ul>
+        <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="{% static 'js/jquery-3.4.1.slim.min.js.download' %}" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js.download' %}" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

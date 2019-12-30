@@ -1,0 +1,31 @@
+{%extends "blog/base.html" %}
+{% block content %}
+{% load staticfiles %}
+<div class="container">
+  <div style="text-align:center">
+    <h2>Contact Us</h2>
+    <p>Swing by for a cup of coffee, or leave us a message:</p>
+  </div>
+  <div class="row" >
+    <div class="col-sm-11">
+        <h3>Location</h3>
+        <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.2449299890823!2d75.80904361504393!3d26.86395828314869!2m3!
+                      1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db66fe2879c7f%3A0xdfc843bf9b6f869a!2sMalaviya%20National%20Institute%20of%20Technology%20Jaipur
+                        !5e0!3m2!1sen!2sin!4v1577209002190!5m2!1sen!2sin" width="550" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </p>
+    </div>
+    <div class="col-sm-1">
+      <form method = "post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" class="btn btn-outline-primary" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>Name: Tarun Saini</p>
+  <p>Contac information:<a href="9557144988">9557144988</a>
+  <p>Email Id:<a href="https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&flowName=GlifWebSignIn&flowEntry=ServiceLogin">tarunmzn98@gmail.com</a>.</p>
+</footer>
+{%endblock%}
