@@ -2,17 +2,17 @@ from django.db import models
 from django.utils import timezone
 from django.urls import reverse
 from django.contrib import auth
+
 # Create your models here.
 
 class Query(models.Model):
-    First_name = models.CharField(max_length=100)
-    Last_name = models.CharField(max_length=100)
-    City =  models.CharField(max_length=100)
-    title = models.CharField(max_length=100)
-    Subject = models.TextField()
+    Name = models.CharField(max_length=100)
+    Email = models.EmailField(max_length=50)    
+    Title = models.CharField(max_length=100)
+    Content = models.TextField()
 
     def __str__(self):
-        return self.title
+        return self.Title
 
 
 #this class only for a authenticated user which can post
@@ -48,6 +48,7 @@ class Comment(models.Model):
     def approve(self):
         self.approved_comment = True
         self.save()
+    
 
     def __str__(self):
         return self.text

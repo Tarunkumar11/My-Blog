@@ -1,0 +1,40 @@
+.Post_Block{
+    border: 10px solid #272222;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    background: #1eb5f1;
+    align-items: center;
+    margin: auto;
+    position: center;
+    color: rgb(19, 19, 19);
+    margin-top: 10px;
+    position: relative;
+}
+
+#tag{
+    font-size: 30px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.row{
+    align-items: inline;
+    align-self: start;
+    align-content: center;   
+}
+#title{
+    margin-top: 10px;
+}
+#align_cen{
+    align-items: center;
+}
+#input_label{
+    font-size: 20px;
+    font-variant-position: normal;
+    margin-top: 2px;
+    margin-bottom: 0px;
+    position: relative;
+    
+}

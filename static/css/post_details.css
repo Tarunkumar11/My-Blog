@@ -1,0 +1,14 @@
+#post_details{
+    border: 12px solid #272222;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    box-shadow: thistle;
+    background-color: #1eb5f1;
+    
+    a{
+        background: black;
+    }
+}
