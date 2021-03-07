@@ -1,12 +1,41 @@
 {% extends "blog/base.html" %}
 {% load bootstrap3 %}
 {% block content %}
-<div class="container">
+
+
+<div class="Post_Block container">
+  <div class="row">
+      <div class="col-md-12 col-md-6 col-sm-4 ">
+          <div id = "tag" class="panel-heading">Sign Up</div>
+              <form class="form-horizontal" role="form" method="POST">
+                          <div class="form-group">
+                              <ul style=" display: table;margin: 0 auto;list-style-type: none;">
+                                  {% csrf_token %}
+                                  {% bootstrap_form form %}
+                                  
+                                  <li><button type="submit" class="btn btn-primary btn-block">
+                                      <i class="fa fa-btn fa-user"></i> Save 
+                                  </button></li>
+                              </ul>
+                          </div>
+                  </form>
+              
+          </div>
+      </div>
+  </div>
+</div>    
+</div>
+
+
+
+
+<!--
+<div class="container col-md-6  col-sm-4">
   <h1>Sign UP</h1>
   <form  method="POST">
-    {% bootstrap_form form %}
+    
     {% csrf_token %}
-    <input type="submit" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false" value="Sign UP">
+    <input type="submit" class="btn btn-dark" data-toggle="button" aria-pressed="false" value="Sign UP">
   </form>
-</div>
+</div>-->
 {% endblock %}

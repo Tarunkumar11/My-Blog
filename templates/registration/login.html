@@ -1,16 +1,31 @@
-{% extends 'blog/base.html' %}
-
-
+{%extends "blog/base.html" %}
 {% block content %}
-  <div class="form-group">
-    <h4>Please Login: </h4>
+
+<div class="offset-md-3 col-md-6 col-sm-12">
+<div id="login" class="container" >
     {% if form.errors %}
         <p>Your username and password didn't match.Please try again!</p>
     {% endif %}
-    <form method="POST" action="{% url 'login' %}">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Login" />
-    </form>
+    <div  class="row justify-content-center align-items-center">
+        <div id="login-box" class="col-md-6 col-sm-12 ">
+            <form id="login-form" class="form" method="POST" action="{% url 'login' %}">
+                <h3 class="text-left text-info" style="margin-top: 30px;">Login</h3>
+                    <div class="form-group">
+                        {% csrf_token %}
+          
+                              <label for="username" class="text-info">Username</label><br>
+                              <div type="text" name="username" id="username">{{form.username}}</div>
+                          </div>
+                          <div class="form-group">
+                              <label for="username" class="text-info">Password</label><br>
+                              <div type="text" name="username" id="username">{{form.password}}</div>
+                          </div>
+                          <input type="submit" class="btn btn-dark" data-toggle="button" aria-pressed="false" value="Login">
+                         <a class="btn btn-dark" data-toggle="button" aria-pressed="false"  href="{% url 'reset_password' %}" style="color:white; text-decoration:none;"> Forgot Password</a>
+                      </form>
+                  </div>
+              </div>
+          
   </div>
-{% endblock %}
+</div>
+{%endblock%}

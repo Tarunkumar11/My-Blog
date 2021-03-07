@@ -1,10 +1,24 @@
 {%extends "blog/base.html" %}
 {% block content %}
-<h1>New Post</h1>
-<form class="post-form"  method="post">
-{% csrf_token%}
-{{form.as_p}}
-<<button type="submit" class="btn btn-outline-primary" >Post Comment</button>
-</form>
-<script >var = new MediumeEditor('.editable');</script>
+<div class="Post_Block container">
+    <div class="row">
+        <div class="col-md-12 col-md-6 col-sm-4 ">
+            <div id = "tag" class="panel-heading">Add Comment</div>
+                <form class="form-horizontal" role="form" method="POST">
+                    <div class="form-group">
+                        <ul style=" display: table;margin: 0 auto;list-style-type: none;">
+                            {% csrf_token %}
+                            <label id = "input_label">Comment</label>
+                            <li id = 'text'  name="text" placeholder="Content">{{form.text}}</li>
+                            <li><button type="submit" class="btn btn-primary btn-block">
+                            <i class="fa fa-btn fa-user"></i> Post Comment
+                            </button></li>
+                        </ul>
+                    </div>
+                                
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {%endblock%}

@@ -1,5 +1,49 @@
-{% extends "blog/base.html" %}
+{%extends "blog/base.html" %}
 {% block content %}
-<h1>About me</h1>
-<p1>I am a Nitian</p1>
-{%endblock%}
+{% load static %}
+<div  class="container">
+    <div class="row row-margin-bottom">
+            <div class="offset-md-3 col-md-5  col-sm-12 no-padding lib-item" data-category="ui">
+                <div class="lib-panel">
+                    <div class="row box-shadow">
+                        <div class="col-md-6">
+                            <img class="lib-img" src="{% static 'img/img.jpg' %}">
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="lib-row lib-header" style="font-size: 24px;">
+                                About Me
+                                <div class="bottom">
+                                    
+                                    <a class="btn btn-primary btn-twitter btn-sm" href="https://github.com/Tarunkumar11">
+                                        <i class="fa fa-github"></i>
+                                    </a>
+                                    <a class="btn btn-danger btn-sm" rel="publisher"
+                                       href="https://www.linkedin.com/in/tarun-kumar-91614016b/">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                    <a class="btn btn-primary btn-sm" rel="publisher"
+                                    href="mailto:tarun.ece17@nituk.ac.in"
+                                       >
+                                        <i class="fa fa-envelope""></i>
+                                    </a>
+                                    <a class="btn btn-warning btn-sm" rel="publisher" href="http://tarunkumarsaini.herokuapp.com/">
+                                        <i class="fa fa-laptop"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="lib-row lib-desc" style="font-size: 18px;">
+                                    <p>I am  a Django Developer and Problem Solver.I really love to learn  and explore new things 
+                                    and implement my  theoretical Knowledge  in practical to create new Things.<p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

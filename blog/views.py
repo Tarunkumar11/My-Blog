@@ -1,7 +1,11 @@
 from django.shortcuts import render,get_object_or_404,redirect
+from django.contrib.auth import get_user_model
 from django.utils import timezone
 from django.http import HttpResponse
 from . import forms
+from django.conf import settings
+from django.db.models import Q
+from django.core.mail import send_mail
 from django.contrib.auth import authenticate,login,logout
 from blog.models import Post,Comment #Signup
 from django.urls import reverse_lazy
@@ -12,6 +16,8 @@ from django.views.generic import (TemplateView,ListView,DetailView,
                                     CreateView,UpdateView,DeleteView,
                                     RedirectView)
 # Create your views here.
+
+
 class Signup(CreateView):
     form_class = forms.SignupForm
     success_url = reverse_lazy("login")
@@ -66,11 +72,18 @@ class PostDeleteView(LoginRequiredMixin,DeleteView):
     success_url = reverse_lazy('post_list')
 
 class DraftListView(LoginRequiredMixin,ListView):
+    val = None
     login_url = '/login/'
     redirect_field_name = 'blog/post_list.html'
     model = Post
+    def get(self, request, *args, **kwargs):
+        global val
+        val = request.user.id
+        return super(LoginRequiredMixin, self).get(request, *args, **kwargs)
+    
     def get_queryset(self):
-        return Post.objects.filter(publish_date__isnull = True).order_by('-create_date')
+        global val
+        return Post.objects.filter(Q(publish_date__isnull = True) & Q(author_id=val)).order_by('-create_date')
 
 class LogOutView(RedirectView):
     url = reverse_lazy('post_list')
@@ -89,9 +102,12 @@ def add_comment(request,pk):
     post = get_object_or_404(Post,pk=pk)
     if request.method == 'POST':
         form = CommentForm(request.POST)
+        form.author = request.user.username
         if form.is_valid():
+            form.cleaned_data['author'] = request.user.first_name
             comment = form.save(commit = False)
             comment.post = post
+            comment.author = request.user.username
             comment.save()
             return redirect('post_detail',pk = post.pk)
         else:
