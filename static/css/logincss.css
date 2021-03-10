@@ -1,0 +1,207 @@
+
+#logincont {
+    top: 55%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 450px;
+    width: 300px;
+    box-shadow: 0 20px 30px black;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.content {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    background-size: cover;
+    background-size: cover;
+    color: rgb(142, 197, 245);
+    background-color: transparent;
+}
+
+.content h2 {
+    position: relative;
+    top: 40%;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: x-large;
+    transition: 0.3s;
+}
+
+.content h2:hover {
+    color: aqua;
+}
+
+#signIn {
+    height: 100%;
+    width: 100%;
+    left: 100%;
+    top: 0px;
+    position: absolute;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+#signUp {
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    right: 100%;
+    position: absolute;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+#signUp {
+    height: 500px;
+    width: 300px;
+    background: url('https://images.wallpaperscraft.com/image/starry_sky_mountains_horizon_night_120139_1280x720.jpg');
+    background-size: 100% 100%;
+    text-align: center;
+    color: rgb(157, 180, 214);
+    font-weight: 600;
+}
+
+#signUp h1 {
+    padding: 40px;
+    color: rgb(157, 180, 214);
+}
+
+#txt2 {
+    padding: 8px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: rgb(30, 37, 46);
+    color: rgb(19, 120, 151);
+}
+
+#txt2:focus {
+    outline: none;
+}
+
+#txt2::placeholder {
+    color: rgb(5, 151, 196);
+}
+
+.or {
+    padding: 20px;
+}
+
+.signup {
+    margin-bottom: 15px;
+}
+
+.icons {
+    margin-left: 8px;
+}
+
+.icons i {
+    margin-right: 10px;
+    font-size: larger;
+    transition: 0.3s;
+    color: aqua;
+}
+
+.icons i:hover {
+    color: white;
+}
+
+.btn2 {
+    padding: 10px 30px;
+    margin-top: 10px;
+    background-color: rgb(30, 37, 46);
+    border: none;
+    border-radius: 20px;
+}
+
+.btn2 a {
+    text-decoration: none;
+    color: rgb(202, 213, 216);
+    font-weight: 600;
+}
+
+.fp a {
+    text-decoration: none;
+    color: rgb(212, 227, 231);
+}
+
+#signIn {
+    height: 500px;
+    width: 300px;
+    background: url('https://images.wallpaperscraft.com/image/starry_sky_mountains_horizon_night_120139_1280x720.jpg');
+    border-radius: 20px;
+    text-align: center;
+    color: rgb(157, 180, 214);
+    font-weight: 600;
+    background-size: 100% 100%;
+}
+
+#signIn h1 {
+    padding: 40px;
+    color: rgb(157, 180, 214);
+}
+
+#txt {
+    padding: 8px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: rgb(30, 37, 46);
+    color: rgb(19, 120, 151);
+}
+
+#txt:focus {
+    outline: none;
+}
+
+#txt::placeholder {
+    color: rgb(5, 151, 196);
+}
+
+.or {
+    padding: 20px;
+}
+
+.signup {
+    margin-bottom: 15px;
+}
+
+.icons {
+    margin-left: 8px;
+}
+
+.icons i {
+    margin-right: 10px;
+    font-size: larger;
+    transition: 0.3s;
+}
+
+.icons i:hover {
+    color: white;
+}
+
+.btn {
+    padding: 10px 30px;
+    margin-top: 10px;
+    background-color: rgb(30, 37, 46);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 3px 5px rgb(43, 68, 85);
+}
+
+.btn a {
+    text-decoration: none;
+    color: rgb(9, 168, 216);
+    font-weight: 600;
+}
+
+p a {
+    text-decoration: none;
+    color: rgb(12, 151, 194);
+}

@@ -1,7 +1,7 @@
 from django.contrib import admin
-from blog.models import Post,Comment,Query
+from blog.models import Blog_post,Blog_comments,Query
 # Register your models here.
-admin.site.register(Post)
-admin.site.register(Comment)
+admin.site.register(Blog_post)
+admin.site.register(Blog_comments)
 #admin.site.register(Signup)
 admin.site.register(Query)

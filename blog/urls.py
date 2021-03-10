@@ -4,8 +4,9 @@ from blog import views
 from . import forms
 from django.contrib.auth import views as auth_view
 from django.urls import reverse_lazy
+from blog.views import HomeView
 urlpatterns = [
-    url(r'^$',views.PostListView.as_view(),name = 'post_list'),
+    url(r'^$',HomeView.as_view(),name = 'home'),
     url(r'^about/',views.AboutView.as_view(),name = 'about'),
     url(r'Signup/$',views.Signup.as_view(),name = 'signup'),
     url(r'^logout',views.LogOutView.as_view(),name='logout'),

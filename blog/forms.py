@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from .models import Post, Comment,Query
+from .models import Blog_post, Blog_comments,Query
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
@@ -19,7 +19,7 @@ class QueryForm(forms.ModelForm):
 
 class PostForm(forms.ModelForm):
     class Meta():
-        model = Post
+        model = Blog_post
         fields = ("title","text",)
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Title'}),
@@ -29,7 +29,7 @@ class PostForm(forms.ModelForm):
 
 class CommentForm(forms.ModelForm):
     class Meta:
-        model = Comment
+        model = Blog_comments
         fields = ('text',)
 
         widgets = {
