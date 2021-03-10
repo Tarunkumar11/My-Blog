@@ -4,7 +4,7 @@ from django.contrib import auth
 
 
 class UserManager(BaseUserManager):
-    def _create_user(self, email, password=None, is_superuser=False, is_staff=False, **kwargs):
+    def _create_user(self, email, password=None, is_superuser=False, is_staff=False,**kwargs):
         user = self.model(email=email, is_superuser=is_superuser, is_staff=is_staff, **kwargs)
         if password:
             user.set_password(password)
@@ -15,7 +15,7 @@ class UserManager(BaseUserManager):
         return self._create_user(email, password, is_superuser=False, is_staff=False, **kwargs)
 
     def create_superuser(self, email, password, **kwargs):
-        return self._create_user(email, password, is_superuser=True, is_staff=True, **kwargs)
+        return self._create_user(email, password, is_superuser=True, is_staff=True,**kwargs)
 
 class User(AbstractUser):
     USERNAME_FIELD = 'email'
