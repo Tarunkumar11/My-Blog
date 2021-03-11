@@ -1,4 +1,3 @@
-
 {%extends "blog/new_base.html" %}
 {% block content1 %}
 <div id='logincont' class="container">
@@ -7,25 +6,28 @@
         <h2 onclick="func1()">Sign Up</h2>
     </div>
 
-    <div id="signIn">
-        <h1>Sign up</h1>
-        <div class="form-group">
+    <div id="signIn"  action="{% url 'login' %}">
+        <h1>Sign up dfsdfsd </h1>
+        {% csrf_token %}
+        {{ form2.as_p }}
+        <!-- <div class="form-group">
             <label for="">UserName</label>
             <br>
             <input type="text" class="form-control" name="" id="txt" aria-describedby="emailHelpId" placeholder="UserName">
 
         </div>
-        <div class="form-group">
+        <div class="form-group" >
             <label for="">Password</label>
             <br>
+            
             <input type="password" class="form-control" name="" id="txt" placeholder="Password">
         </div>
         <div class="form-group">
             <label for="">Varify Password</label>
             <br>
             <input type="password" class="form-control" name="" id="txt" placeholder="Varify Password">
-        </div>
-        <button type="button" class="btn"><a href="white.html">Sign up</a></button>
+        </div> -->
+        <button type="button" class="btn"><a href="">Sign up</a></button>
     </div>
 
     <div id="signUp">
@@ -38,14 +40,15 @@
             <div class="form-group">
                 <label for="">Email</label>
                 <br>
-                <div type="text" name="username" id="username">{{form.username}}</div>
-                <!-- <input type="email" class="form-control" name="" id="txt2" aria-describedby="emailHelpId" placeholder="Email" value = "{{ form.username }}"> -->
+                <!-- <div type="text" name="username" id="txt2" placeholder="Email">{{form.username}}</div> -->
+                <input name = "username" id = "id_username" type="email" class="form-control" aria-describedby="emailHelpId" placeholder="Email">
             </div>
-            <div class="form-group">
+            <div  class="form-group">
                 <label for="">Password</label>
                 <br>
-                <!-- <input type="password" class="form-control" name="" id="txt2" placeholder="Password" value = "{{ form.password }}"> -->
-                <div type="text" name="username" id="username">{{form.password}}</div>
+                <input type="password" class="form-control" name="password" id="id_password" placeholder="Password">
+                
+                <!-- <div type="text" name="username" id="username">{{form.password}}</div> -->
             </div>
             <p class="fp"><a  href="{% url 'password_reset' %}"> Forgot Password?</a></p>
             <button type="submit" class="btn2" value="Login">Sign In</button>

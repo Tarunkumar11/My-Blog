@@ -38,19 +38,10 @@
         <link rel="stylesheet" href={% static  "css/logincss.css" %}>
 
 
-     </head>
+   </head>
    
-     
-<head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-</head>
-<body>
-    <header>
+   <body>
+      <header>
         <!-- header inner -->
         <div  class="head_top">
            <div class="header">
@@ -84,6 +75,17 @@
                                 <li class="nav-item">
                                    <a class="nav-link" href="#"> Nature</a>
                                 </li>
+                                {% if user.is_authenticated %}
+                                    <li class="nav-item">
+                                       <a class="nav-link" href="{% url 'post_new' %}">New Post</a></li>
+                                    </li>
+                                    <li class="nav-item">
+                                       <li class="nav-item active"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                                    </li>
+                                    <li class="nav-item">
+                                       <li class="nav-item active"><a class="nav-link" href="{% url 'post_draft_list' %}">Drafts</a></li>
+                                    </li>
+                                 {% endif %}
                              </ul>
                           </div>
                        </nav>
@@ -93,9 +95,11 @@
            {% block content6 %}
            {% endblock %}
            </div>
-           
-           {% block content3 %}
-           {% endblock %}
+           {% if not user.is_authenticated %}
+               {% block excontent %}
+               {% endblock %}   
+            {% endif %}
+
            <!-- end header inner -->
            <!-- end header -->
            <!-- banner -->

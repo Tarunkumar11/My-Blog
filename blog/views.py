@@ -97,7 +97,7 @@ class DraftListView(LoginRequiredMixin,ListView):
     
     def get_queryset(self):
         global val
-        return Post.objects.filter(Q(publish_date__isnull = True) & Q(author_id=val)).order_by('-create_date')
+        return Blog_post.objects.filter(Q(publish_date__isnull = True) & Q(author_id=val)).order_by('-create_date')
 
 class LogOutView(RedirectView):
     url = reverse_lazy('home')

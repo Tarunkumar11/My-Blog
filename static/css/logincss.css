@@ -66,11 +66,11 @@
 }
 
 #signUp h1 {
-    padding: 40px;
+    padding: 14px;
     color: rgb(157, 180, 214);
 }
 
-#txt2 {
+#id_username {
     padding: 8px;
     border: none;
     margin-top: 10px;
@@ -80,17 +80,37 @@
     color: rgb(19, 120, 151);
 }
 
-#txt2:focus {
+#id_password {
+    padding: 8px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: rgb(30, 37, 46);
+    color: rgb(19, 120, 151);
+}
+
+
+#id_username:focus {
     outline: none;
 }
 
-#txt2::placeholder {
+#id_username::placeholder {
     color: rgb(5, 151, 196);
 }
 
-.or {
-    padding: 20px;
+#id_password:focus {
+    outline: none;
 }
+
+#id_password::placeholder {
+    color: rgb(5, 151, 196);
+}
+
+
+/* .or {
+    padding: 7px;
+} */
 
 .signup {
     margin-bottom: 15px;
@@ -142,7 +162,7 @@
 }
 
 #signIn h1 {
-    padding: 40px;
+    padding: 14px;
     color: rgb(157, 180, 214);
 }
 
@@ -165,7 +185,7 @@
 }
 
 .or {
-    padding: 20px;
+    padding: 7px;
 }
 
 .signup {

@@ -1,5 +1,5 @@
-{%extend "blog/base.html" %}
-{% block content %}
+{% extend "blog/new_base.html" %}
+{% block content1 %}
   {% for post in posts %}
   <div class="post">
     {% if post.author == user.username%}

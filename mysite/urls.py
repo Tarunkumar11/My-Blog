@@ -20,6 +20,8 @@ from django.contrib.auth import views as auth_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    # path('accounts/login', myloginview.as_view(),name='login'),
+    # path('accounts/login', Signup.as_view(),name='signup'),
     path('accounts/', include('django.contrib.auth.urls')),
     # url(r'^login/$',auth_view.LoginView.as_view(), name="login"),
     # url(r'^password_reset/$',auth_view.PasswordResetView.as_view(template_name = "registration/password_reset_form.html"),name = "reset_password"),
