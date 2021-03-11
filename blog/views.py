@@ -67,8 +67,8 @@ class PostDetailView(DetailView):
     model = Blog_post
 
 class CreatePostView(LoginRequiredMixin,CreateView):
-    login_url  = '/login/'
-    redirect_field_name = 'blog/post_detail.html'
+    #login_url  = '/login/'
+    #redirect_field_name = 'blog/post_detail.html'
     model = Blog_post
     fields = ("title","text")
     def form_valid(self, form):

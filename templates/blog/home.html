@@ -49,8 +49,8 @@
                   </div>
                   <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                      <div class="our_text_box">
-                        <h3 class="awesome pa_wi">The biggest and most awesome Photo of  year</h3>
-                        <p>{{ blogs.0.text|truncatechars:300}} </p>
+                        <h3 class="awesome pa_wi">{{ blogs.0.title }}</h3>
+                        <p>{{ blogs.0.text|truncatechars:300 | safe}} </p>
                         <div class="post_box padding_bottom1">
                            <h4 class="flot_left1">Post By : &nbsp; {{ blogs.0.author }} </h4>
                            <ul class="like">
@@ -103,14 +103,14 @@
                               
                               
                               <div class="post_box d_flex padding_top3">
-                                 <h3 class="awesome padding_flot">Chad-Montano</h3>
+                                 <h3 class="awesome padding_flot">{{ blogs.2.title | truncatechars:30 }}</h3>
                                  <h4 class="flot_left1">Post By :{{ blogs.2.author }} </h4>
                                  <ul class="like padding_left2">
                                     <li><a href="#"><img src={% static "images/like1.png" %} alt="#"/>Like</a></li>
                                      <li><a href="#"><img src={% static  "images/comm1.png" %} alt="#"/>Comment</a></li>
                                  </ul>
                               </div>
-                              <p>{{ blogs.2.text|truncatechars:300}}</p>
+                              <p>{{ blogs.2.text|truncatechars:250 | safe}}</p>
                            </div>
                         </div>
                         <div class="col-md-6">

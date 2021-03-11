@@ -1,6 +1,23 @@
 {%extends "blog/new_base.html" %}
 {% block content1 %}
-    <div class="Post_Block container">
+<div class="container" id = 'blog-creating-form'>  
+    <div class="user-info">
+        <h1>User name</h1>
+    </div>
+    <hr class='horizontal-line'>
+    <div class="create-form">
+        <input type="text" name="title" maxlength="100" required="" id="id_title">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+    </div>
+</div>
+  
+
+  
+
+
+    <!-- <div class="Post_Block container">
             <div class="row">
                 <div class=" col-lg-6 offset-md-3 col-md-6 col-sm-12 ">
                     <div id = "tag" class="panel-heading">Add New Post</div>
@@ -8,22 +25,22 @@
                                     <div class="form-group">
                                         <ul style=" display: table;margin: 0 auto;list-style-type: none;">
                                             {% csrf_token %}
+                                            {{ form.as_p }}
                                             <label id = "input_label">Title</label>
                                             <li id = 'title'  name="title" >{{form.title}}</li>
                                             <label id = "input_label">Content</label>
-                                            <li id = 'title'  name="text" placeholder="Content">{{form.text}}</li>
+                                            <li id = 'title'  name="text" placeholder="Content">{{form.text | safe }}</li>
                                             <li><button type="submit" class="btn btn-primary btn-block">
                                                 <i class="fa fa-btn fa-user"></i> Save 
                                             </button></li>
                                         </ul>
                                     </div>
                             </form>
-                        
                     </div>
                 </div>
             </div>
         </div>    
-    </div>
+    </div> -->
 {%endblock%}
 
 

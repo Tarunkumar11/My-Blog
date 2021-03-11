@@ -36,7 +36,49 @@
         <!-- Custom CSS-->
         <link rel="stylesheet" href={% static  "css/base.css" %}>
         <link rel="stylesheet" href={% static  "css/logincss.css" %}>
+        <style>
+           #drp{
+               background:transparent;
+               border-width: 6px;
+               border-color: #1513136b;
+               
+           }
+           #drp a{
+               font-size: 0.7em;
+               margin-top: 5px;
+           }
+           .content{
+            padding-bottom: 5em;
+           }
 
+           #blog-creating-form{
+            padding: 0px;
+            background: #4841413d;;
+            width: 90%;
+            height: 100vh;
+            border-radius: 19px;
+            box-shadow: 3px -3px 13px 4px #6f6a6a;
+            display: flex;
+            justify-content: end;
+            flex-direction: column;
+            align-items: center;
+           }
+           #blog-creating-form hr{
+            border-top: 1px solid #999;
+            width: 100%;
+           }
+           #blog-creating-form .user-info{
+               height: 6em;
+               display: flex;
+               justify-content: flex-start;
+           }
+
+           #blog-creating-form .create-form{
+            width: 100%;
+            height: 100%;
+            background: #de8e8e;
+           }
+        </style>
 
    </head>
    
@@ -75,15 +117,29 @@
                                 <li class="nav-item">
                                    <a class="nav-link" href="#"> Nature</a>
                                 </li>
-                                {% if user.is_authenticated %}
-                                    <li class="nav-item">
-                                       <a class="nav-link" href="{% url 'post_new' %}">New Post</a></li>
-                                    </li>
-                                    <li class="nav-item">
-                                       <li class="nav-item active"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
-                                    </li>
-                                    <li class="nav-item">
-                                       <li class="nav-item active"><a class="nav-link" href="{% url 'post_draft_list' %}">Drafts</a></li>
+                                {% if user.is_authenticated %}    
+                                    <li class="nav-item dropdown">
+                                       <a class="nav-link" href="#" data-toggle="dropdown">First Menu <i class="icon-arrow"></i></a>
+                                       <ul class="dropdown-menu" id = 'drp' >
+                                          <li class="nav-item">
+                                             <a class="nav-link" href="{% url 'post_new' %}">Write Story</a></li>
+                                          </li>
+                                          <li class="nav-item">
+                                             <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                                          </li>
+                                          <li class="nav-item">
+                                             <li class="nav-item"><a class="nav-link" href="{% url 'post_draft_list' %}">Drafts</a></li>
+                                          </li>
+                                          <li class="nav-item">
+                                             <a class="nav-link" href="{% url 'post_draft_list' %}">Setting</a>
+                                          </li>
+                                          <li class="nav-item">
+                                             <a class="nav-link" href="{% url 'post_draft_list' %}">Your Blogs</a>
+                                          </li>
+                                          <li class="nav-item">
+                                             <a class="nav-link" href="{% url 'post_draft_list' %}">Favorites Blogs</a>
+                                           </li>
+                                       </ul>
                                     </li>
                                  {% endif %}
                              </ul>
